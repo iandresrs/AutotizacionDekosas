@@ -3,6 +3,8 @@ package com.dekosas.Steps;
 import com.dekosas.Models.EsperaImplicita;
 import com.dekosas.PageObjects.PaginaCancelarCompra;
 import net.thucydides.core.annotations.Step;
+import org.hamcrest.Matcher;
+import org.hamcrest.Matchers;
 
 public class PaginaCancelarCompraStep {
     PaginaCancelarCompra paginaCancelarCompra = new PaginaCancelarCompra();
@@ -20,9 +22,13 @@ public class PaginaCancelarCompraStep {
 
     @Step
     public void eliminarProductos(){
-        esperaImplicita.EsperaImplicita(10);
-        paginaCancelarCompra.getDriver().findElement(paginaCancelarCompra.getBtnEliminarArticulo())
-                .click();
+
+        while (paginaCancelarCompra.getDriver().findElement(paginaCancelarCompra.getBtnEliminarArticulo()).isDisplayed()){
+           esperaImplicita.EsperaImplicita(10);
+           paginaCancelarCompra.getDriver().findElement(paginaCancelarCompra.getBtnEliminarArticulo())
+                   .click();
+           
+       }
     }
 
 }
