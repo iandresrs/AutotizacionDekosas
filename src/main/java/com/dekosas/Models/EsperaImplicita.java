@@ -2,7 +2,7 @@ package com.dekosas.Models;
 
 public class EsperaImplicita {
 
-    public void EsperaImplicita(int segundos){
+    public void esperaImplicita(int segundos){
         try {
             Thread.sleep(segundos * 1000);
         }catch (InterruptedException e){

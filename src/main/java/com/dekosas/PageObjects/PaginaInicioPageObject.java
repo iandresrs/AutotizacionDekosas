@@ -4,14 +4,19 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 
 public class PaginaInicioPageObject extends PageObject {
-    By msjValidacion = By.xpath("//p[text()='Mi Cuenta']");
-    By btnVolverInicio = By.xpath("(//a[@href='https://dekosas.com/co/'])[1]");
+    By msjValidacionLogin = By.xpath("//div/h3[text()='Bienvenido']");
+    By txtBuscarCategoria = By.id("search");
+    By lblseleccionCategoria = By.xpath("//li/span[text()=' Lamparas']");
 
-    public By getMsjValidacion() {
-        return msjValidacion;
+    public By getMsjValidacionLogin() {
+        return msjValidacionLogin;
     }
 
-    public By getBtnVolverInicio() {
-        return btnVolverInicio;
+    public By getTxtBuscarCategoria() {
+        return txtBuscarCategoria;
+    }
+
+    public By getLblseleccionCategoria() {
+        return lblseleccionCategoria;
     }
 }
